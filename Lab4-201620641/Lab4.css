@@ -1,0 +1,74 @@
+body{
+    max-width: 1024px;
+    color: white;
+    text-align: center;
+}
+header{background-color: red; }
+main{background-color: orange; }
+footer{background-color: gray;clear: both;}
+section{background-color: blueviolet; overflow:auto;}
+.memo{width:100%; margin-bottom: 10px; background-color: blue; word-break: break-all; }
+aside{background-color: green;} 
+
+@media(min-width : 768px){
+    header{
+        max-width: 100%;
+        height: 200px;
+    }
+
+    main{
+        max-width: 100%;
+        height: 120px;
+    }
+
+    footer {
+        max-width: 100%;
+        height: 120px;
+    }
+
+    section{
+        float: left;
+        height: 200px;
+        width: 50%;
+    }
+
+    aside{
+        float: right;
+        height: 200px;
+        width: 50%;
+    }
+
+    #input_text{width:40%; height:70%;  }
+    #append_btn{vertical-align: bottom; margin-top: 20px; margin-left: 2px;}
+
+}
+
+@media(max-width : 767px){
+    header{
+        width: 100%;
+        height: 160px;
+        font-style: italic;
+    }
+
+    main{
+        width: 100%;
+        height: 80px;
+    }
+
+    footer {
+        width: 100%;
+        height: 80px;
+    }
+
+    section{
+        height: 160px;
+    }
+
+    aside{
+        height: 160px;
+    }
+
+    #input_text{width:40%; height:70%; }
+    #append_btn{vertical-align: bottom; margin-top: 0px; margin-left: 2px;}
+
+}

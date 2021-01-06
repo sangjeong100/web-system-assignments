@@ -1,0 +1,47 @@
+extends layout.pug
+
+block content
+  h1= "Ajou Movie Information"
+  h3= "Register Movie"
+  h4= "Please enter the movie information to add a review."
+  form(action='/result' method='post' name='form_' onsubmit='return check();')
+    p
+      input(type='text' id='title' name='title')
+    p
+      input(type='text' id='actors' name='actors')
+    p
+      input(type='text' id='genre' name='genre')
+    p
+      input(type='text' id='poster_url' name='poster_url')
+    h4= "Movie Ratings"
+    div(id="select_rating")
+      -for(let idx=0; idx<=5;idx++)
+        label(for=`${idx}`) #{idx}
+        input(type='radio' id=`${idx}` name="rating" value=`${idx}`)
+    p
+      input(type='submit' id="submit" class="button" value='submit')
+
+  script(type='text/javascript' charset="UTF-8").
+    function check(){      
+      //정보입력 여부 확인
+      if(!document.form_.title.value || !document.form_.actors.value || !document.form_.genre.value || !document.form_.poster_url.value || !document.form_.rating.value){
+        alert("필요한 정보를 입력하지 않았습니다.");
+        return false;
+      }
+      else{
+        if(document.form_.poster_url.value === '/images/star.svg')
+        {
+          alert(`${document.form_.poster_url.value}는 영화 포스터 URL이 아닙니다.`)
+          return false;
+        }
+
+        for(let i=1;i<12;i+=2)
+          if(document.querySelector('#select_rating').childNodes[i].checked) //checked 여부 확인
+          {
+            return true;
+          }
+
+        alert("필요한 정보를 입력하지 않았습니다.");
+        return false;
+      }
+    } 

@@ -1,0 +1,34 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+  border: 2px solid black;
+  
+}
+
+a {
+  color: #00B7FF;
+}
+
+.poster{
+  width: 560px;
+  height: 580px;
+
+}
+.TrendingStarPosition{
+  text-align: right;
+
+}
+
+.TrendingStar{
+  margin-left: 25%;
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 766px){
+  .poster{
+    width: 100%;
+  }
+}
+

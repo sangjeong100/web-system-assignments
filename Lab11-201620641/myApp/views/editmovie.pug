@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= "Edit Movie"
+  form(action=`/routes/movie/update/${movie._id}`, method="POST")
+    div(class="form-group")
+      label title 
+      input(type="text" class="form-control" name="title" style="width:40%" value=`${movie.title}`)
+    div(class="form-group")
+      label year
+      br
+      input(type="text" class="form-control" name="year" style="width:40%" value=`${movie.year}`)
+    div(class="form-group")
+      label image path
+      br
+      input(type="text" class="form-control" name="imagePath" style="width:40%" value=`${movie.url}`)
+    button(type="submit" class="btn btn-dark" onclick=`update(this,"edit Movie")`) Edit Movie

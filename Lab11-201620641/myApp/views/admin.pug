@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  div(style="text-align:center")
+    h1(style="text-align:left")= "Admin"
+    each movie in movies
+      hr
+      p
+        img(src=`${movie.url}` class="poster" alt="")
+      p
+        h4= `${movie.title} / ${movie.year}`
+      div(class="btn-group" role="group" aria-label="Basic example" style="text-align:left;width:20%")
+        button(type="button" onclick=`goEditPage(${movie});` class="btn btn-secondary") EDIT
+        button(type="button" onclick=`deleteFunc(${movie});` class="btn btn-secondary") DELETE
+      span(class="TrendingStarPosition" id = `starPosition_${movie.id}`)
+        if (!movie.trending)
+          input(type="image" src="/images/NoTrending_star.png" onclick=`ajaxTrendingUpdate(${movie._id},${movie.trending})` class="TrendingStar" id="blackStar")
+        else
+          input(type="image" src="/images/YesTrending_star.png" onclick=`ajaxTrendingUpdate(${movie._id},${movie.trending})` class="TrendingStar" id="yellowStar")

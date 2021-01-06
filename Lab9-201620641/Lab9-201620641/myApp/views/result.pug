@@ -1,0 +1,17 @@
+extends layout.pug
+
+block content
+  img(src=`${poster_url}` id='poster')
+  h1= title
+  hr
+  p
+    h3= actors
+  p
+    h3= genre
+  hr
+  p
+    -for(var idx=0;idx< rating;idx++)
+      img(src='/images/star.svg' class='rating-start-img')
+  br
+  hr
+  a(href='/'): button(type="button" class="button") Go Home

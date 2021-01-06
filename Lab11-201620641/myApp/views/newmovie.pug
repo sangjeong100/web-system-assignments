@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= "Add Movie"
+  form(action="/routes/movie/create", method="POST")
+    div(class="form-group")
+      label title 
+      input(type="text" class="form-control" name="title" style="width:40%")
+    div(class="form-group")
+      label year
+      br
+      input(type="text" class="form-control" name="year" style="width:40%")
+    div(class="form-group")
+      label image path
+      br
+      input(type="text" class="form-control" name="imagePath" style="width:40%")
+    button(type="submit" class="btn btn-dark") Add Movie

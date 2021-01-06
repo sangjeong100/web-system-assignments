@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  div(style="text-align:center")
+    h1(style="text-align:left")= "Movies"
+    each movie in movies
+      hr
+      p
+        img(src=`${movie.url}` class="poster" alt="")
+      p
+        h4= `${movie.title} / ${movie.year}` 
+      
+         

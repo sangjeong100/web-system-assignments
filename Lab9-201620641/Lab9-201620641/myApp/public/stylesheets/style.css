@@ -1,0 +1,32 @@
+body {
+  text-align: center;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.button {
+  transition-duration: 0.4s;
+  background-color: whitesmoke;
+  border-color: wheat;
+}
+
+.button:hover {
+  background-color: gray; 
+  color: white;
+}
+
+#select_rating{
+  text-align: center;
+}
+
+#poster{
+  height: 600px;
+  width: 165px;
+}
+
+.rating-start-img{
+  white-space: nowrap;
+  height: 50px;
+  width: 50px;
+  
+}
